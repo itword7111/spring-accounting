@@ -18,7 +18,7 @@ public class AccountingServiceImpl implements AccountingService {
         List<ReportEntity> reportEntityList = accountingRepository.getReports();
         List<Report> reportList = new ArrayList<Report>();
         for (ReportEntity reportEntity : reportEntityList) {
-            reportList.add(new Report(reportEntity.getUserName(), reportEntity.getTask(), reportEntity.getTimeOfTrack()));
+            reportList.add(new Report(reportEntity.getUserName(), reportEntity.getTask(), reportEntity.getTimeOfTrack(), reportEntity.getTimeForTrack()));
         }
         return reportList;
     }
@@ -32,6 +32,6 @@ public class AccountingServiceImpl implements AccountingService {
     }
 
     public void addReport(Report report) {
-        accountingRepository.addReport(new ReportEntity(report.getUserName(), report.getTask(), report.getTimeOfTrack()));
+        accountingRepository.addReport(new ReportEntity(report.getUserName(), report.getTask(), report.getTimeOfTrack(), report.getTimeForTrack()));
     }
 }

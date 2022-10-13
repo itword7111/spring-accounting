@@ -6,14 +6,24 @@ public class Report {
     private String userName;
     private String task;
     private Timestamp timeOfTrack;
+    private Timestamp timeForTrack;
 
-    public Report(String userName, String task, Timestamp timeOfTrack) {
+    public Report(String userName, String task, Timestamp timeOfTrack, Timestamp timeForTrack) {
         this.userName = userName;
         this.task = task;
         this.timeOfTrack = timeOfTrack;
+        this.timeForTrack = timeForTrack;
     }
 
     public Report() {
+    }
+
+    public Timestamp getTimeForTrack() {
+        return timeForTrack;
+    }
+
+    public void setTimeForTrack(Timestamp timeForTrack) {
+        this.timeForTrack = timeForTrack;
     }
 
     public String getUserName() {

@@ -16,14 +16,25 @@ public class ReportEntity {
     private String task;
     @Column(name = "time_of_track")
     private Timestamp timeOfTrack;
+    @Column(name = "time_for_track")
+    private Timestamp timeForTrack;
 
-    public ReportEntity(String userName, String task, Timestamp timeOfTrack) {
+    public ReportEntity(String userName, String task, Timestamp timeOfTrack, Timestamp timeForTrack) {
         this.userName = userName;
         this.task = task;
         this.timeOfTrack = timeOfTrack;
+        this.timeForTrack=timeForTrack;
     }
 
     public ReportEntity() {
+    }
+
+    public Timestamp getTimeForTrack() {
+        return timeForTrack;
+    }
+
+    public void setTimeForTrack(Timestamp timeForTrack) {
+        this.timeForTrack = timeForTrack;
     }
 
     public String getUserName() {
