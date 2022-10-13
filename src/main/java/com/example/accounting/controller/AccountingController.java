@@ -25,7 +25,7 @@ public class AccountingController {
         gson = new Gson();
     }
 
-    @RequestMapping(value = "/", method = RequestMethod.GET)
+    @RequestMapping(value = "/withoutOneTrack", method = RequestMethod.GET)
     public String getTodayTrackedUserNames() throws IOException {
         List<String> listOfNonReportedTasks = accountingService.getTodayTrackedUserNames();
         String json = gson.toJson(listOfNonReportedTasks);
